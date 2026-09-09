@@ -1,0 +1,32 @@
+\c clube_livro
+
+\h - comandos de help 
+
+\h CREATE TABLE - criar tabela fera demais
+
+/*---------------------------------------------------------------*/
+
+CONSTRAINTS - RESTRICOES
+  CHAVE PRIMARIA //chave primaria nao pode repetir um numero
+  CHAVE ESTRANGEIRA //chave estrangeira se um registro estiver em outra tabela esse registro nao pode ser apagado
+  NULO //nao poder ser nulo
+  CHECAGEM //checando se o que o usuario digitou esta dentro do que queremos - validação da info
+  UNICO //pode ter apenas um nessa categoria, nao pode repetir
+  DEFAULT //valor padrao
+
+
+
+CREATE TABLE associado (
+  id SERIAL PRIMARY KEY NOT NULL,
+  nome VARCHAR(80) NOT NULL,
+  endereco TEXT NOT NULL, 
+  cpf CHAR(14) NOT NULL UNIQUE, //tem que ser unico e nao pode ser vazio
+  email VARCHAR(120) NOT NULL CHECK (email LIKE '%@%'), 
+  /*mais uma restrição para integridade de informação - vendo se contem esse elemento*/
+  celular CHAR(16) NOT NULL,
+  nascimento DATE NOT NULL DEFAULT now() //default - quando eu quero que um dado seja preenchido automaticamento caso o usuario nao coloque
+  //nesse caso colocamos o now pq dai pega a data atual e lança como date
+);
+
+
+select * from associado

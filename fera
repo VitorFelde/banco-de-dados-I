@@ -1,0 +1,47 @@
+CREATE DATABASE clube livro;
+
+CREATE TABLE autor (
+id_autor SERIAL PRIMARY KEY NOT NULL,
+nome VARCHAR(80) NOT NULL,
+sobrenome VARCHAR(80) NOT NULL
+);
+
+INSERT INTO autor (nome, sobrenome) VALUES ('MARIA', 'SILVA');
+
+INSERT INTO autor (nome, sobrenome) VALUES ('PEDRO', 'OLIVEIRA');
+
+CREATE TABLE genero (
+id_genero SERIAL PRIMARY KEY NOT NULL,
+descricao VARCHAR (80) NOT NULL
+);
+
+CREATE TABLE livro (
+id_livro SERIAL PRIMARY KEY NOT NULL,
+titulo VARCHAR(80) NOT NULL,
+id_genero INT NOT NULL REFERENCES genero (id_genero),
+id_autor INT NOT NULL REFERENCES autor (id_autor)
+);
+
+INSERT INTO genero (descricao) VALUES ('ROMANCE');
+
+INSERT INTO livro (titulo, id_genero, id_autor) VALUES ('CEN ANOS DE SOLIDÃO', 1, 1);
+
+CREATE TABLE associado (
+id SERIAL PRIMARY KEY NOT NULL,
+nome VARCHAR(80) NOT NULL,
+endereco TEXT NOT NULL,
+cpf CHAR(14) NOT NULL UNIQUE,
+email VARCHAR(120) NOT NULL CHECK (email LIKE '%@%'),
+celular CHAR(16) NOT NULL,
+nascimento DATE NOT NULL DEFAULT now()
+);
+
+CREATE TABLE distribuitors (
+did serial,
+name varchar (40),
+PRIMARY KEY (did)
+);
+
+ALTER TABLE distribuitors ADD COLUMN addres VARCHAR (30);
+
+ALTER TABLE distribuitors ADD COLUMN ifpr VARCHAR (20);

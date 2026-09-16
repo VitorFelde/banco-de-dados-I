@@ -90,3 +90,5 @@ INSERT INTO aluno(nome, fone) VALUES ('CRISTIANO RONALDO', '6767-6767');
 INSERT INTO aluno(fone, nome) VALUES ('6868-6868', 'EVERTON CEBOLINHA');
 
 INSERT INTO aluno(nome, fone) VALUES ('AMANDA TELLES', '4444-4444'), ('VITOR MOREIRA', '2222-2222'); //conseguimos adicionar com apenas um INSERT se separarmos por vírgula
+
+DELETE FROM aluno WHERE id IN(9,11);

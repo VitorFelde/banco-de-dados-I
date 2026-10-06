@@ -17,3 +17,9 @@ CREATE TABLE telefone_aluno (
 );
 
 SELECT * from aluno;
+
+\dt;
+
+\d telefone_aluno;
+
+\d aluno;

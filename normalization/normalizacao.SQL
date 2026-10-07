@@ -29,13 +29,13 @@ SELECT * from aluno;
 /*regra FN2*/
 
 CREATE TABLE disciplina (
-      cod_disciplina VARCHAR(10) PRIMARY KEY,
+      cod_disciplina INT PRIMARY KEY,
       nome VARCHAR (100) NOT NULL
 );
 
 CREATE TABLE matricula (
       matricula_aluno INT,
-      cod_disciplina VARCHAR (10),
+      cod_disciplina INT,
       nota DECIMAL (4, 2),
       PRIMARY KEY (matricula_aluno, cod_disciplina),
       FOREIGN KEY (matricula_aluno)

@@ -43,3 +43,14 @@ CREATE TABLE matricula (
       FOREIGN KEY (cod_disciplina)
         REFERENCES disciplina(cod_disciplina)
 );
+
+CREATE TABLE curso (
+      cod_curso INT PRIMARY KEY,
+      nome VARCHAR(100) NOT NULL
+);
+
+ALTER TABLE aluno ADD COLUMN cod_curso INT;
+
+ALTER TABLE aluno ADD CONSTRAINT fk_aluno_curso
+FOREIGN KEY (cod_curso) REFERENCES
+curso(cod_curso);

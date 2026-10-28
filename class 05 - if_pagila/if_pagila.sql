@@ -51,3 +51,10 @@ FROM
 ORDER BY
 	2 ASC
 LIMIT 10 OFFSET 20; /*here were showing since 10 till 20*/
+
+SELECT 
+	customer_id,
+	amount,
+	amount * 0.3
+FROM
+	payment;

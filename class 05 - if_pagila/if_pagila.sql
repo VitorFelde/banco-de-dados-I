@@ -42,3 +42,12 @@ FROM
 	film
 ORDER BY
 	2 ASC; /*here were justing ordering the second column, what gives us the same result, but its a good programation practice*/
+
+SELECT 
+	film_id,
+	title
+FROM 
+	film
+ORDER BY
+	2 ASC
+LIMIT 10 OFFSET 20; /*here were showing since 10 till 20*/

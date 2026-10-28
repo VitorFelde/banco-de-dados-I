@@ -84,3 +84,15 @@ FROM
 WHERE
 	city like 'S%' AND
 	city like '%s'; /*it needs to starts with a upper case and finishes with a lowercase s*/
+
+
+SELECT 
+	city_id,
+	city
+FROM
+	city
+WHERE
+	city like 'A%' AND
+	city like '%a';
+
+

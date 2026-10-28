@@ -95,4 +95,20 @@ WHERE
 	city like 'A%' AND
 	city like '%a';
 
+SELECT * from city;
+
+SELECT 
+	city_id,
+	city
+FROM
+	city
+WHERE
+	city_id IN (2,4,6);
+
+SELECT 
+	title
+FROM
+	film
+WHERE
+	film_id IN (select film_id from film_actor where actor_id = 1);
 

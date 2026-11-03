@@ -1,0 +1,40 @@
+SELECT 
+    title AS titulo,
+    length AS duracao_min,
+    rental_rate as preco_aluguel
+FROM film
+ORDER BY titulo ASC
+LIMIT 10;
+
+
+SELECT 
+	title AS titulo,
+	length AS duracao_min,
+	round ((length /60.0), 2) AS duracao_horas
+FROM film
+WHERE length >= 184 /*we always need to use the original name of the parameter*/
+ORDER BY length DESC,
+title ASC;
+
+
+SELECT
+	title AS titulo,
+	rental_rate AS preco_dolar,
+	round ((rental_rate * 5.50), 2) AS preco_reais
+	rating AS classificacao /*here were doing this to real check the information were getting*/
+FROM film
+WHERE rating = 'G' AND length < 50
+ORDER BY rental_rate DESC,
+title ASC;
+
+
+SELECT 
+    title AS titulo,
+    film_id AS codigo,
+    rental_rate AS preco,
+    rental_duration AS dias,
+    round ((rental_rate / rental_duration), 2) AS preco_por_dia
+FROM film
+WHERE film_id > 0 AND film_id < 11
+ORDER BY preco_por_dia DESC,
+title ASC;

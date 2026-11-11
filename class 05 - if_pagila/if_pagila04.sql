@@ -92,3 +92,16 @@ INNER JOIN payment USING (rental_id)
 GROUP BY film_id
 ORDER BY 3 DESC /*when we do this to say that we want the column 3*/
 LIMIT 10;
+
+SELECT
+    SUM(amount)
+FROM
+    inventory
+INNER JOIN film USING(film_id)
+INNER JOIN film_category USING(film_id)
+INNER JOIN category USING (category_id)
+INNER JOIN rental USING(inventory_id)
+INNER JOIN payment USING (rental_id)
+GROUP BY film_id
+ORDER BY 1 DESC 
+LIMIT 10;
